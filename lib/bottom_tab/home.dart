@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lets_match/util/user_match_util.dart';
 import 'package:lets_match/widget/user_match_card.dart';
 
@@ -47,8 +46,8 @@ class _HomeState extends State<Home> {
               alignment: Alignment.center,
               child: Stack(
                 children: [
-                  FaIcon(
-                    FontAwesomeIcons.heart,
+                  Icon(
+                    CupertinoIcons.heart,
                     color: Colors.pink,
                     size: 80,
                   ),
