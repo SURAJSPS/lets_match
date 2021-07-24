@@ -18,40 +18,33 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.pink[100],
       body: Stack(
         children: [
-          Row(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 10,
-              ),
-              _getUser(),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      height: 0,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * .40,
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return UserMatchCard(
-                            userMatchModel: UserMatchUtil.list[index],
-                          );
-                        },
-                        itemCount: UserMatchUtil.list.length,
-                      ),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    // color: Colors.black,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: _getUser(),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    // color: Colors.blue,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: _getMatchUser(context),
+                  )
+                ],
               ),
             ],
           ),
           Positioned(
-            right: 155,
-            height: 40,
-            top: 330,
+            right: MediaQuery.of(context).size.width / 4,
+            top: MediaQuery.of(context).size.height / 4,
             child: Container(
+              alignment: Alignment.center,
               child: Stack(
                 children: [
                   FaIcon(
@@ -64,16 +57,18 @@ class _HomeState extends State<Home> {
                     child: Text(
                       '70 %',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                          color: Colors.white),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Colors.white,
+                      ),
                     ),
                     left: 20,
                   ),
                 ],
               ),
-              height: 100,
-              width: 100,
+              height: MediaQuery.of(context).size.width / 2,
+              width: MediaQuery.of(context).size.width / 2,
+              // color: Colors.white,
             ),
           ),
         ],
@@ -82,10 +77,33 @@ class _HomeState extends State<Home> {
   }
 }
 
+Widget _getMatchUser(context) {
+  return Column(
+    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Container(
+        // color: Colors.blue,
+        height: MediaQuery.of(context).size.height / 9.99,
+      ),
+      Container(
+        height: MediaQuery.of(context).size.height / 1.94,
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return UserMatchCard(
+              userMatchModel: UserMatchUtil.list[index],
+            );
+          },
+          itemCount: UserMatchUtil.list.length,
+        ),
+      ),
+    ],
+  );
+}
+
 Widget _getUser() {
-  return Expanded(
+  return Container(
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(

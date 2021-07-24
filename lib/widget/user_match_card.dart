@@ -10,127 +10,119 @@ class UserMatchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), color: Colors.white),
-            child: Padding(
-              padding: const EdgeInsets.all(3),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.network(
-                  "${userMatchModel!.image}",
-                  height: 190,
-                  width: 190,
-                  fit: BoxFit.cover,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50), color: Colors.white),
+          child: Padding(
+            padding: const EdgeInsets.all(3),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.network(
+                "${userMatchModel!.image}",
+                height: 190,
+                width: 190,
+                fit: BoxFit.cover,
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "${userMatchModel!.name}",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            "${userMatchModel!.location}",
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          "${userMatchModel!.name}",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          "${userMatchModel!.location}",
+          style: TextStyle(
+              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        RichText(
+          text: TextSpan(
+            text: 'Religion: ',
             style: TextStyle(
                 fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          RichText(
-            text: TextSpan(
-              text: 'Religion: ',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey),
-              children: <TextSpan>[
-                TextSpan(
-                  text: "${userMatchModel!.religion}",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.pink),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                alignment: Alignment.center,
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(15)),
-                child: IconButton(
-                  icon: FaIcon(
-                    FontAwesomeIcons.heart,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Container(
-                alignment: Alignment.center,
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(15)),
-                child: IconButton(
-                  icon: FaIcon(
-                    FontAwesomeIcons.heart,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Container(
-                alignment: Alignment.center,
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(15)),
-                child: IconButton(
-                  icon: FaIcon(
-                    FontAwesomeIcons.arrowDown,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              SizedBox(
-                width: 5,
+            children: <TextSpan>[
+              TextSpan(
+                text: "${userMatchModel!.religion}",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.pink),
               ),
             ],
           ),
-          SizedBox(
-            height: 30,
-          )
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: Colors.pink, borderRadius: BorderRadius.circular(15)),
+              child: IconButton(
+                icon: FaIcon(
+                  FontAwesomeIcons.heart,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: Colors.pink, borderRadius: BorderRadius.circular(15)),
+              child: IconButton(
+                icon: FaIcon(
+                  FontAwesomeIcons.heart,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: Colors.pink, borderRadius: BorderRadius.circular(15)),
+              child: IconButton(
+                icon: FaIcon(
+                  FontAwesomeIcons.arrowDown,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30,
+        )
+      ],
     );
   }
 }
