@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lets_match/model/user_match_model.dart';
@@ -73,8 +74,8 @@ class UserMatchCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(15)),
               child: IconButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.heart,
+                icon:Icon(
+                CupertinoIcons.heart,
                   color: Colors.white,
                 ),
                 onPressed: () {},
@@ -90,8 +91,8 @@ class UserMatchCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(15)),
               child: IconButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.heart,
+                icon: Icon(
+                  Icons.message,
                   color: Colors.white,
                 ),
                 onPressed: () {},
@@ -107,8 +108,8 @@ class UserMatchCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(15)),
               child: IconButton(
-                icon: FaIcon(
-                  FontAwesomeIcons.arrowDown,
+                icon: Icon(
+                  CupertinoIcons.down_arrow,
                   color: Colors.white,
                 ),
                 onPressed: () {},
