@@ -80,13 +80,13 @@ Widget _getMatchUser(context) {
   return Column(
     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      Container(
-        // color: Colors.blue,
-        height: MediaQuery.of(context).size.height / 9.99,
+      SizedBox(
+        height: 80,
       ),
       Container(
-        height: MediaQuery.of(context).size.height / 1.94,
+        height: MediaQuery.of(context).size.height / 2.54,
         child: ListView.builder(
+          addSemanticIndexes: true,
           itemBuilder: (context, index) {
             return UserMatchCard(
               userMatchModel: UserMatchUtil.list[index],

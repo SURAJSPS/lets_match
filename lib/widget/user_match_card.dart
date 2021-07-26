@@ -74,8 +74,8 @@ class UserMatchCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(15)),
               child: IconButton(
-                icon:Icon(
-                CupertinoIcons.heart,
+                icon: Icon(
+                  CupertinoIcons.heart,
                   color: Colors.white,
                 ),
                 onPressed: () {},
